@@ -8,16 +8,42 @@ from tensorflow.keras.models import Sequential
 # from keras.optimizers import SGD
 from matplotlib import pyplot as plt
 
-mnist = tf.keras.datasets.mnist
+# test tensorflow
+# x=tf.random.normal(shape=(4,3))
+# print("x",x)
+# y=tf.random.normal(shape=(4,3))
+# tf.print("y",y)
+# z=tf.ones(shape=(1))
+# tf.print("z", z)
+# result = x*y + z
+# tf.print("result", result)
 
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
-# print(x_train[0])
-print(x_train.shape)
+# generate random date
+import numpy as np
+nb = 4
+np.random.seed(42)
+sizes = np.random.randint(low=1000, high=2000, size=nb)
+tf.print(sizes)
+np.random.seed(42)
+prices = nb*100.0 + np.random.randint(low=1000, high=2000, size=nb)
+tf.print(prices)
 
-plt.figure(figsize=(5,5))
-for k in range(12):
- plt.subplot(3,4,k+1)
- plt.imshow(x_train[k],cmap="Greys")
- plt.axis('off')
-plt.tight_layout()
+plt.plot(sizes, prices, "bx")
+plt.ylabel("Price")
+plt.xlabel("Sizes")
 plt.show()
+
+#load mnist
+#mnist = tf.keras.datasets.mnist
+
+# (x_train, y_train), (x_test, y_test) = mnist.load_data()
+# # print(x_train[0])
+# print(x_train.shape)
+
+# plt.figure(figsize=(5,5))
+# for k in range(12):
+#  plt.subplot(3,4,k+1)
+#  plt.imshow(x_train[k],cmap="Greys")
+#  plt.axis('off')
+# plt.tight_layout()
+# plt.show()
